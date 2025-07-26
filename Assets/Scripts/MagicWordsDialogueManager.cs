@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class MagicWordsDialogueManager : MonoBehaviour
 {
+    [Header("Loading icon")]
+    [SerializeField] private GameObject loadingIcon;
+
+    [Header("Dialogue panel")]
+    [SerializeField] private GameObject dialoguePanel;
+
     [Header("UI Dialogue")]
     [SerializeField] private TextMeshProUGUI avatarNameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -29,11 +35,20 @@ public class MagicWordsDialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        // Loading data...
+        loadingIcon.SetActive(true);
+        dialoguePanel.SetActive(false);
+        avatarLeftImage.gameObject.SetActive(false);
+        avatarRightImage.gameObject.SetActive(false);
+
         // Fetch the data at runtime
         StartCoroutine(
             APIManager.Instance.GetDialoguesAndAvatars(
             (result) =>
             {
+                loadingIcon.SetActive(false);
+                dialoguePanel.SetActive(true);
+
                 // Convert the dialogue array into a list, and save for when switching dialogues
                 dialoguesList = new List<DialogueData>(result.dialogue);
 

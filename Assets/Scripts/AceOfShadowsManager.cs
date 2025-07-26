@@ -49,7 +49,7 @@ public class AceOfShadowsManager : MonoBehaviour
         while (stackOne.childCount > 0)
         {
             Transform card = stackOne.GetChild(stackOne.childCount - 1);
-            StartCoroutine(MoveCardToTarget(card, stackTwo.position, durationCardSlide));
+            StartCoroutine(MoveCardToTarget(card, stackOne.childCount - 1, stackTwo.position, durationCardSlide));
 
             // Update sort order test
             var sr = card.GetComponent<SpriteRenderer>();
@@ -95,23 +95,26 @@ public class AceOfShadowsManager : MonoBehaviour
         animationDoneText.gameObject.SetActive(true);
     }
 
-    private IEnumerator MoveCardToTarget(Transform card, Vector3 targetPos, float duration)
+    private IEnumerator MoveCardToTarget(Transform card, int cardIndex, Vector3 targetPos, float duration)
     {
         Vector3 startPos = card.position;
         Quaternion startRot = card.rotation;
+
+        float angle = (cardIndex % 2 == 0) ? -4f : 4f;  // Alternate ending rotation between 2 numbers, this way ending stack looks more natural
+        Quaternion goalRot = Quaternion.Euler(0, 0, angle); 
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
             card.position = Vector3.Lerp(startPos, targetPos, elapsed / duration);
-            card.rotation = Quaternion.Lerp(startRot, Quaternion.identity, elapsed / duration);
+            card.rotation = Quaternion.Lerp(startRot, goalRot, elapsed / duration);
             elapsed += Time.deltaTime;
 
             yield return null;
         }
 
         card.position = targetPos;
-        card.rotation = Quaternion.identity;
+        card.rotation = goalRot;
 
         // Invert sort order when switching decks, since its now in reverse
         SpriteRenderer cardRenderer = card.GetComponent<SpriteRenderer>();
