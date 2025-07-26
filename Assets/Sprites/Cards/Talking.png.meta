@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 2fc5b2015f6c84e0ba847b8de82805e8
+guid: 5a5d9fb5945114b38bdac12af8258a8b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5724919467465725336
-    second: Diamond-10_0
+      213: 3026780150433883788
+    second: Talking_0
+  - first:
+      213: 329443097625010822
+    second: Talking_1
+  - first:
+      213: -7664575675962232723
+    second: Talking_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Diamond-10_0
+      name: Talking_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 192
-        height: 256
+        x: 5
+        y: 82
+        width: 117
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +160,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 895530a7ceff27f40800000000000000
-      internalID: 5724919467465725336
+      spriteID: c86a0df9288410a20800000000000000
+      internalID: 3026780150433883788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Talking_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 134
+        width: 123
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682a4a770ca629400800000000000000
+      internalID: 329443097625010822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Talking_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 4
+        width: 103
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60fb280805f1a590800000000000000
+      internalID: -7664575675962232723
       vertices: []
       indices: 
       edges: []
@@ -174,7 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Diamond-10_0: 5724919467465725336
+      Talking_0: 3026780150433883788
+      Talking_1: 329443097625010822
+      Talking_2: -7664575675962232723
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

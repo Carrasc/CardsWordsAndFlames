@@ -34,6 +34,13 @@ public class AceOfShadowsManager : MonoBehaviour
     {
         UpdateCardsSortOrder();
         UpdateCardsCounters();
+    }
+
+    /// <summary>
+    /// When user clicks the screen, start the animation
+    /// </summary>
+    public void StartAnimation()
+    {
         StartCoroutine(StartMovingCards());
     }
 
